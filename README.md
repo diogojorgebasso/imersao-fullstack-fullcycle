@@ -37,6 +37,19 @@ Arquitetura Hexagonal / Ports and Adapters.
 
 ![image](https://user-images.githubusercontent.com/65865529/106503595-a0caee00-64a4-11eb-9b76-217ce3b8c385.png)
 
+### Vantagens do Protocol Buffer e HTTP/2
+
+Protocol Buffer:
+
+- Muito mais rápido
+- Mais moderno
+- Tipagem de dados
+  HTTP/2:
+- Nome original SPDY pela Google
+- Utiliza a mesma conexão TCP para enviar e receber dados do cliente e servidor (Multiplex)
+- Server Push
+- Gasta menos recursos de rede
+
 ### Licença
 
-Este repo está licenciado sob [MIT](LICENSE)
+Este repo está licenciado sob [Apache License 2](LICENSE)

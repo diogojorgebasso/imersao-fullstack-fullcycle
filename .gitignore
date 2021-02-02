@@ -1,3 +1,5 @@
 .pgdata
 .idea
 .env
+
+.cache
