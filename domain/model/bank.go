@@ -1,17 +1,18 @@
 package model
 
 import (
+	"time"
+
 	"github.com/asaskevich/govalidator"
 	uuid "github.com/satori/go.uuid"
-	"time"
 )
 
-//Working with heritage; `valid:"-"` = validação não necessária
+// Bank is Working with heritage; `valid:"-"` = validação não necessária
 type Bank struct {
 	Base     `valid:"required"`
-	Code     string     `json:"code" valid:"notnull"`
-	Name     string     `json:"name" valid:"notnull"`
-	Accounts []*Account `valid:"-"`
+	Code     string     `json:"code" gorm:"type:varchar(20)" valid:"notnull"`
+	Name     string     `json:"name" gorm:"type:varchar(255)" valid:"notnull"`
+	Accounts []*Account `gorm:"ForeignKey:BankID" valid:"-"`
 }
 
 func (bank *Bank) isValid() error { //creating method
