@@ -1,15 +1,17 @@
 package model
 
 import (
+	"time"
+
 	"github.com/asaskevich/govalidator"
 	uuid "github.com/satori/go.uuid"
-	"time"
 )
 
 type Account struct {
 	Base      `valid:"required"`
 	OwnerName string    `json:"owner_name" valid:"notnull"`
 	Bank      *Bank     `valid:"-"`
+	BankId		string		`grom: "column:bank_id;type:uuid;not null" valid:"-"` 
 	Number    string    `json:"number" valid:"notnull"`
 	PixKeys   []*PixKey `valid:"-"`
 }

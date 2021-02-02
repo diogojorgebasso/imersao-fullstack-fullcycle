@@ -2,9 +2,10 @@ package model
 
 import (
 	"errors"
+	"time"
+
 	"github.com/asaskevich/govalidator"
 	uuid "github.com/satori/go.uuid"
-	"time"
 )
 
 const (
@@ -32,6 +33,7 @@ type Transaction struct {
 	AccountFrom       *Account `valid:"-"`
 	Amount            float64  `json:"amount" valid:"notnull"`
 	PixKeyTo          *PixKey  `valid:"-"`
+	PixKeyIDTo 				string   `gorm:"column:pix_key_id;type:uuid" valid:"notnull"`
 	Status            string   `json:"status" valid:"notnull"`
 	Description       string   `json:"description" valid:"notnull"`
 	CancelDescription string   `json:"cancel_description" valid:"-"`
