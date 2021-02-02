@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+//Working with heritage
 type Bank struct {
 	Base     `valid:"required"`
 	Code     string     `json:"code" valid:"notnull"`
@@ -13,7 +14,7 @@ type Bank struct {
 	Accounts []*Account `valid:"-"`
 }
 
-func (bank *Bank) isValid() error {
+func (bank *Bank) isValid() error { //creating method
 	_, err := govalidator.ValidateStruct(bank)
 	if err != nil {
 		return err
@@ -21,6 +22,8 @@ func (bank *Bank) isValid() error {
 	return nil
 }
 
+
+//creating a new Bank
 func NewBank(code string, name string) (*Bank, error) {
 	bank := Bank{
 		Code: code,
@@ -30,10 +33,10 @@ func NewBank(code string, name string) (*Bank, error) {
 	bank.ID = uuid.NewV4().String()
 	bank.CreatedAt = time.Now()
 
-	err := bank.isValid()
+	err := bank.isValid() //checking for errors
+
 	if err != nil {
 		return nil, err
 	}
-
 	return &bank, nil
 }

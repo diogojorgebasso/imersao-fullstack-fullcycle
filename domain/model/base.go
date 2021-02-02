@@ -5,10 +5,12 @@ import (
 	"time"
 )
 
+//in load, run:
 func init() {
-	govalidator.SetFieldsRequiredByDefault(true)
+	govalidator.SetFieldsRequiredByDefault(value:true)
 }
 
+//Working with heritage
 type Base struct {
 	ID        string    `json:"id" valid:"uuid"`
 	CreatedAt time.Time `json:"created_at" valid:"-"`
