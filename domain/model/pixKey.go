@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// criando Interaface 
 type PixKeyRepositoryInterface interface {
 	RegisterKey(pixKey *PixKey) (*PixKey, error)
 	FindKeyByKind(key string, kind string) (*PixKey, error)
@@ -15,6 +16,7 @@ type PixKeyRepositoryInterface interface {
 	FindAccount(id string) (*Account, error)
 }
 
+//kind é ou email ou CPF
 type PixKey struct {
 	Base      `valid:"required"`
 	Kind      string   `json:"kind" valid:"notnull"`
@@ -27,10 +29,12 @@ type PixKey struct {
 func (pixKey *PixKey) isValid() error {
 	_, err := govalidator.ValidateStruct(pixKey)
 
+	//validação simples; regra de negócio
 	if pixKey.Kind != "email" && pixKey.Kind != "cpf" {
 		return errors.New("invalid type of key")
 	}
 
+	//validação simples; regra de negócio
 	if pixKey.Status != "active" && pixKey.Status != "inactive" {
 		return errors.New("invalid status")
 	}

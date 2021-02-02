@@ -7,7 +7,7 @@ import (
 
 //in load, run:
 func init() {
-	govalidator.SetFieldsRequiredByDefault(value:true)
+	govalidator.SetFieldsRequiredByDefault(true)
 }
 
 //Working with heritage

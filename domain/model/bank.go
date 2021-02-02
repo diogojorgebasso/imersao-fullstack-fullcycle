@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-//Working with heritage
+//Working with heritage; `valid:"-"` = validação não necessária
 type Bank struct {
 	Base     `valid:"required"`
 	Code     string     `json:"code" valid:"notnull"`
@@ -23,7 +23,7 @@ func (bank *Bank) isValid() error { //creating method
 }
 
 
-//creating a new Bank
+// NewBank : creating a new Bank
 func NewBank(code string, name string) (*Bank, error) {
 	bank := Bank{
 		Code: code,

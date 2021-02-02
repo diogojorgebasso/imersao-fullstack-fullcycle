@@ -3,6 +3,6 @@
 Participe gratuitamente: https://imersao.fullcycle.com.br/
 
 ## Sobre o repositório
-Esse repositório contém todo código utilizado durante as aulas para referência.
 
-Faça seu fork e também nos dê uma estrelinha para nos ajudar a divulgar o projeto.
+gRPC: um framework de desenvolvimento que tem por objetivo facilitar o processo de comunicação entre sistemas de uma forma rápida, leve e independente de linguagem
+==> ideal para microserviços
