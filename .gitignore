@@ -1,5 +1,5 @@
 .pgdata
 .idea
 .env
-
+.vscode
 .cache
