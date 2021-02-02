@@ -1,3 +1,4 @@
+//Antes de mais nada, desculpe-me por ter enviado aquela primeira versão apenas como fork e não como resolução propriamente do desafio.
 package model
 
 import (
@@ -11,6 +12,11 @@ type User struct {
 	Name      string     `json:"name" valid:"notnull"`
 	Email     string     `json:"email" valid:"notnull"`
 }
+
+//FIXME: Seria mais limpo colocar a função abaixo?
+//func init() {
+//	govalidator.SetFieldsRequiredByDefault(true)
+//}
 
 func (user *User) isValid() error {
 	_, err := govalidator.ValidateStruct(user)
