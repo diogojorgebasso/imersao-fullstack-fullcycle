@@ -7,12 +7,6 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-/* type UserRepositoryInterface interface {
-	Register(user *User) error
-	Save(user *User) error
-	Find(id string) (*User, error)
-} */
-
 type TransactionRepositoryDb struct {
 	Db *gorm.DB
 }

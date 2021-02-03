@@ -6,12 +6,9 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/codeedu/imersao/codepix-go/domain/model"
-
+	"github.com/diogojorgebasso/imersao-fullstack-fullcycle/domain/model"
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
-	_ "github.com/lib/pq"
-	_ "gorm.io/driver/sqlite"
 )
 
 func init() {

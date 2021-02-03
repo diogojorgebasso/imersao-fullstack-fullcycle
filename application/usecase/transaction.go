@@ -4,7 +4,7 @@ import (
 	"errors"
 	"log"
 
-	"github.com/codeedu/imersao/codepix-go/domain/model"
+	"github.com/diogojorgebasso/imersao-fullstack-fullcycle/domain/model"
 )
 
 // TransactionUseCase : estrutura
