@@ -62,7 +62,7 @@ func (r PixKeyRepositoryDb) FindKeyByKind(key string, kind string) (*model.PixKe
 // FindAccount : finding accounting in Db
 func (r PixKeyRepositoryDb) FindAccount(id string) (*model.Account, error) {
 	var account model.Account
-	r.Db.Preload("Bank").First(&account, "id = ?", id)
+	r.Db.Preload("Bank").First(&account, "id = ?", id) //preload para informações do banco também
 
 	if account.ID == "" {
 		return nil, fmt.Errorf("no account found")
